@@ -4,15 +4,7 @@ Este projeto demonstra a aplicação de algoritmos genéticos para otimização,
 
 ## Descrição do Projeto
 
-Neste projeto, você encontrará um exemplo de algoritmo genético implementado em C++ e uma interface gráfica para visualizar a evolução da população ao longo das gerações. A função de aptidão usada possui vários máximos e mínimos locais e um único máximo global, desafiando o algoritmo a encontrar o ponto ótimo global.
-
-### Função de Aptidão
-
-A função de aptidão utilizada é:
-
-\[ y = \sin(5x) - 0.1(x - 10)^2 + 5 \]
-
-Esta função combina uma onda senoidal com uma parábola para criar uma paisagem de aptidão rica em máximos e mínimos locais, com um máximo global claro.
+Neste projeto, você encontrará exemplos de algoritmo genético implementado em C++ e uma interface gráfica para visualizar a evolução da população ao longo das gerações. Com diferentes funçôes de aptidão, desafiando o algoritmo a encontrar o ponto ótimo global.
 
 ### Recursos
 
