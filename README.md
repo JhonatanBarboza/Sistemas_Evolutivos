@@ -13,9 +13,11 @@ Neste projeto, você encontrará exemplos de algoritmo genético implementado em
 - **Interatividade:** Permite a atualização da população e o gráfico com a tecla Enter.
 
 ##PROJ1
-é o esqueleto basico de um sistema evolutivo onde a o inicio da população, a avaliação de apitidão pela função -0.2 * (x - 10) * (x - 10) + 10, as novas geranções são geradas por elitismo onde o melhor individuo passa seus genis para toda a pululação com uma taxa de mutação.
+
+Este projeto serve como a base de um sistema evolutivo, onde a população inicial é gerada e a aptidão dos indivíduos é avaliada pela função -0.2 * (x - 10) * (x - 10) + 10. Novas gerações são criadas através de um processo de elitismo, no qual o melhor indivíduo transmite seus genes para toda a população, com uma taxa de mutação.
 
 ##PROJ2
-o projeto 2 é a melhoria apartir do projeto 1 nesta foi plotado o grafico da função atraves do opemGL
+
+O projeto 2 é uma evolução do projeto 1, onde foi adicionado o gráfico da função utilizando OpenGL para visualização.
 
 https://github.com/JhonatanBarboza/Sistemas_Evolutivos/issues/1#issue-2493195889
