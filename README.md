@@ -20,4 +20,5 @@ Este projeto serve como a base de um sistema evolutivo, onde a população inici
 
 O projeto 2 é uma evolução do projeto 1, onde foi adicionado o gráfico da função utilizando OpenGL para visualização.
 
-https://github.com/JhonatanBarboza/Sistemas_Evolutivos/issues/1#issue-2493195889
+https://github.com/user-attachments/assets/9def0049-d5f3-4396-8da4-c6b660548612
+
