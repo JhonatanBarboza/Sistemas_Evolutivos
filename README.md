@@ -18,3 +18,4 @@ Neste projeto, você encontrará exemplos de algoritmo genético implementado em
 ##PROJ2
 o projeto 2 é a melhoria apartir do projeto 1 nesta foi plotado o grafico da função atraves do opemGL
 
+https://github.com/JhonatanBarboza/Sistemas_Evolutivos/issues/1#issue-2493195889
