@@ -30,4 +30,5 @@ O Projeto 3 utiliza a função `sin(x) * (x^2 / 45)` no intervalo de -51 a 48. E
 
 Além disso, foi implementada uma taxa de mutação variável. A população é gerada aleatoriamente e, ao longo das gerações, a taxa de mutação é mantida em 0,1 até que 60% da população esteja idêntica até a segunda casa decimal, o que indica que a população encontrou um máximo. Quando isso ocorre, a taxa de mutação aumenta para 10, espalhando novamente a população em busca de um máximo maior.
 
-https://github.com/user-attachments/assets/77377cf7-3d6b-4a05-a9f0-234457089b50
+https://github.com/user-attachments/assets/730aa40c-a7eb-4384-aedc-666e92e6a901
+
