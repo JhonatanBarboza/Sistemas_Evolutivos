@@ -12,11 +12,11 @@ Este projeto apresenta a implementação de algoritmos genéticos em C++ e uma i
 - **Algoritmo Genético:** Implementa um algoritmo com mutação para evoluir a população ao longo das gerações.
 - **Interatividade:** Permite a atualização da população e o gráfico com a tecla Enter.
 
-### PROJ1
+## PROJ1
 
 Este projeto serve como a base para um sistema evolutivo. A população inicial é gerada, e a aptidão dos indivíduos é avaliada pela função `-0.2 * (x - 10) * (x - 10) + 10`. Novas gerações são criadas através de um processo de elitismo, onde o melhor indivíduo transmite seus genes para toda a população, com uma taxa de mutação aplicada. O objetivo é encontrar o máximo global da função.
 
-### PROJ2
+## PROJ2
 
 O Projeto 2 é uma evolução do Projeto 1, com a adição de um gráfico da função utilizando OpenGL para visualização. 
 
@@ -24,7 +24,7 @@ Aqui, é possível ver os indivíduos sendo gerados aleatoriamente e, ao longo d
 
 https://github.com/user-attachments/assets/9def0049-d5f3-4396-8da4-c6b660548612
 
-### PROJ3
+## PROJ3
 
 O Projeto 3 utiliza a função `sin(x) * (x^2 / 45)` no intervalo de -51 a 48. Esta função apresenta vários máximos e mínimos locais, com um máximo global que é o objetivo da população. O desafio é maior, pois o máximo global e o segundo maior máximo estão em lados opostos do gráfico.
 
@@ -32,7 +32,7 @@ Além disso, foi implementada uma taxa de mutação variável. A população é 
 
 https://github.com/user-attachments/assets/730aa40c-a7eb-4384-aedc-666e92e6a901
 
-### PROJ4
+## PROJ4
 
 O Projeto 4 é uma melhoria do Projeto 3, utilizando a mesma função de avaliação `sin(x) * (x^2 / 45)`, mas agora no intervalo de -400 a 400. A principal mudança está na adição de dois gráficos: um em vermelho que mostra a aptidão do melhor de todos, e outro em azul que exibe a média da população. Esses gráficos permitem análises mais detalhadas para aprimorar a estratégia evolutiva.
 
