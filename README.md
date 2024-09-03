@@ -32,3 +32,11 @@ Além disso, foi implementada uma taxa de mutação variável. A população é 
 
 https://github.com/user-attachments/assets/730aa40c-a7eb-4384-aedc-666e92e6a901
 
+### PROJ4
+
+O Projeto 4 é uma melhoria do Projeto 3, utilizando a mesma função de avaliação `sin(x) * (x^2 / 45)`, mas agora no intervalo de -400 a 400. A principal mudança está na adição de dois gráficos: um em vermelho que mostra a aptidão do melhor de todos, e outro em azul que exibe a média da população. Esses gráficos permitem análises mais detalhadas para aprimorar a estratégia evolutiva.
+
+Outra novidade é a possibilidade de restringir o intervalo de nascimento da população, tornando o problema mais desafiador e testando a capacidade do sistema evolutivo de encontrar a solução mesmo sob essas condições. Além disso, a taxa de mutação foi ajustada: em intervalos maiores, foi necessário aumentar ainda mais a dispersão da população. Assim, a cada cinco vezes que a mutação é aumentada como no Projeto 3, é aplicada uma taxa de mutação ainda maior.
+
+https://github.com/JhonatanBarboza/Sistemas_Evolutivos/issues/5#issue-2501717733
+
