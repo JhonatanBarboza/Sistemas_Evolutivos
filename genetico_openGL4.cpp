@@ -5,7 +5,7 @@
 #include <cmath>
 #include <algorithm>
 
-#define TamPop 100    // Tamanho da população
+#define TamPop 150    // Tamanho da população
 #define maxx 400      // Valor máximo do domínio da função em X
 #define minx -410     // Valor mínimo do domínio da função em X
 #define maxy 4000      // Valor máximo do domínio da função em Y
@@ -93,9 +93,9 @@ void displayGraphWindow() {
 // Função para iniciar a população
 void iniciapop(int tampop, float ind[]) {
     srand(time(NULL));  // Inicializa o gerador de números aleatórios com a semente baseada no tempo atual
-    int minIntervalo = minx; 
-    int maxIntervalo = maxx; 
-    
+    int minIntervalo = -50; 
+    int maxIntervalo = 50; 
+
     for (int i = 1; i <= tampop; i++) {
         ind[i] = minIntervalo + rand() % (maxIntervalo - minIntervalo + 1);
     }
@@ -154,58 +154,6 @@ void elitismo(int tampop) {
         ind[i] = std::max(static_cast<float>(minx), std::min(static_cast<float>(maxx), static_cast<float>(ind[i] + mutacao)));  // Garantir que permaneça no domínio
     }
 }
-/*
-void torneio(int tampop)  // Torneio de 2
-{
-    int maxi = 1;
-    float media = 0.0f;
-    float maxfit = fit[1];
-    int a, b, pai1, pai2, i;
-       
-    // Busca pelo melhor indivíduo
-    for (int i = 2; i <= tampop; i++) {
-        if (fit[i] > maxfit) {
-            maxfit = fit[i];
-            maxi = i;
-        }
-    }
-
-    for (i=1;i<=TamPop;i++)
-        indtemp[i] = ind[i];  // Backup dos individuos
-
-    //vetores para plotar grafico do melhor de todos e da media da população
-    melhor_media(maxfit, media, tampop);
-    
-    // Torneio
-    for (i=1;i<=TamPop;i++)
-    {
-        if (i==maxi)    // Protege o melhor individuo
-            continue;
-
-        // Sorteia dois individuos para 1ro torneio
-        a = (rand() %TamPop) + 1;
-        b = (rand() %TamPop) + 1;
-        if (fit[a] > fit[b])
-            pai1 = a;
-        else
-            pai1 = b;
-
-        // Sorteia mais dois individuos para 2do torneio
-        a = (rand() %TamPop) + 1;
-        b = (rand() %TamPop) + 1;
-        if (fit[a] > fit[b])
-            pai2 = a;
-        else
-            pai2 = b;
-
-        // Crossover
-        ind[i] = (indtemp[pai1] + indtemp[pai2])/ 2.0;  // Pegar os pais antigos, pois posso sortear os novos filhos que foram alterados
-
-        // Mutação: muda a posição do indivíduo de forma controlada dentro do domínio
-        ind[i] = ind[i] + (double) (((rand() %maxx - (maxx/2.0))/100.0) * TaxMut);
-    }
-}
-*/
 
 // Função para ajustar a taxa de mutação ao longo das gerações
 void ajustaTaxaMutacao(int tampop) {
@@ -238,7 +186,6 @@ void ajustaTaxaMutacao(int tampop) {
         }
     }
     
-   //TaxMut = 0.0001;
 }
 
 // Função para executar o algoritmo genético e atualizar o gráfico
@@ -254,8 +201,7 @@ void runAlgorithm() {
     glutSetWindow(graphWindow);
     glutPostRedisplay();
 
-    //escolhaer o modo de avaliação
-    //torneio(TamPop);
+    //avaliação
     elitismo(TamPop);
     gen++;
     
