@@ -5,17 +5,18 @@
 #include <cmath>
 #include <algorithm>
 
-#define TamPop 20   // Tamanho da população
-#define maxx 48      // Valor máximo do domínio da função em X
-#define minx -51     // Valor mínimo do domínio da função em X
-#define maxy 56      // Valor máximo do domínio da função em Y
-#define miny -50     // Valor mínimo do domínio da função em Y
+#define TamPop 100    // Tamanho da população
+#define maxx 400      // Valor máximo do domínio da função em X
+#define minx -410     // Valor mínimo do domínio da função em X
+#define maxy 4000      // Valor máximo do domínio da função em Y
+#define miny -4000     // Valor mínimo do domínio da função em Y
 
-constexpr int numger = 20;          // Número de gerações
-float TaxMut = 0.0;       // Taxa de mutação
-float ind[TamPop + 1];    // Indivíduos
-float fit[TamPop + 1];    // Aptidão dos indivíduos
-int gen = 1;              // Geração
+constexpr int numger = 150;    // Número de gerações
+float TaxMut = 0.001;            // Taxa de mutação
+float ind[TamPop + 1];         // Indivíduos
+float fit[TamPop + 1];         // Aptidão dos indivíduos
+float indtemp[TamPop + 1];
+int gen = 1;                   // Geração
 int mainWindow, graphWindow;
 float vetmaxi[numger], vetmedia[numger];
 int cont2 = 0;
@@ -93,7 +94,7 @@ void displayGraphWindow() {
 void iniciapop(int tampop, float ind[]) {
     srand(time(NULL));  // Inicializa o gerador de números aleatórios com a semente baseada no tempo atual
     int minIntervalo = minx; 
-    int maxIntervalo = maxx; //*********************************************************************************************************************
+    int maxIntervalo = maxx; 
     
     for (int i = 1; i <= tampop; i++) {
         ind[i] = minIntervalo + rand() % (maxIntervalo - minIntervalo + 1);
@@ -111,6 +112,19 @@ void avalia(int tampop) {
         printf("\tIndivíduo %d (%f) = %f\n", i, ind[i], fit[i]);
     }
 }
+void melhor_media(float maxfit, float media, int tampop){
+    // Guarda o fitness do melhor indivíduo em vetmaxi
+    vetmaxi[gen-1] = maxfit;
+
+    // Calcula e guarda a média da população em vetmedia
+    for (int i = 1; i <= tampop; i++) {
+        media += fit[i];
+    }
+    media = media / tampop;
+    vetmedia[gen-1] = media;
+    //printf("A média da população é: %f\n", vetmedia[gen-1]);
+
+}
 
 // Função de elitismo para gerar nova geração
 void elitismo(int tampop) {
@@ -126,17 +140,8 @@ void elitismo(int tampop) {
         }
     }
 
-    // Guarda o fitness do melhor indivíduo em vetmaxi
-    vetmaxi[gen-1] = maxfit;
-    //printf("O melhor indivíduo é: %f\n", vetmaxi[gen-1]);
-
-    // Calcula e guarda a média da população em vetmedia
-    for (int i = 1; i <= tampop; i++) {
-        media += fit[i];
-    }
-    media = media / tampop;
-    vetmedia[gen-1] = media;
-    //printf("A média da população é: %f\n", vetmedia[gen-1]);
+    //vetores para plotar grafico do melhor de todos e da media da população
+    melhor_media(maxfit, media, tampop);
 
     for (int i = 1; i <= tampop; i++) {
         if (i == maxi) continue;  // Protege o melhor indivíduo
@@ -149,13 +154,62 @@ void elitismo(int tampop) {
         ind[i] = std::max(static_cast<float>(minx), std::min(static_cast<float>(maxx), static_cast<float>(ind[i] + mutacao)));  // Garantir que permaneça no domínio
     }
 }
+/*
+void torneio(int tampop)  // Torneio de 2
+{
+    int maxi = 1;
+    float media = 0.0f;
+    float maxfit = fit[1];
+    int a, b, pai1, pai2, i;
+       
+    // Busca pelo melhor indivíduo
+    for (int i = 2; i <= tampop; i++) {
+        if (fit[i] > maxfit) {
+            maxfit = fit[i];
+            maxi = i;
+        }
+    }
+
+    for (i=1;i<=TamPop;i++)
+        indtemp[i] = ind[i];  // Backup dos individuos
+
+    //vetores para plotar grafico do melhor de todos e da media da população
+    melhor_media(maxfit, media, tampop);
+    
+    // Torneio
+    for (i=1;i<=TamPop;i++)
+    {
+        if (i==maxi)    // Protege o melhor individuo
+            continue;
+
+        // Sorteia dois individuos para 1ro torneio
+        a = (rand() %TamPop) + 1;
+        b = (rand() %TamPop) + 1;
+        if (fit[a] > fit[b])
+            pai1 = a;
+        else
+            pai1 = b;
+
+        // Sorteia mais dois individuos para 2do torneio
+        a = (rand() %TamPop) + 1;
+        b = (rand() %TamPop) + 1;
+        if (fit[a] > fit[b])
+            pai2 = a;
+        else
+            pai2 = b;
+
+        // Crossover
+        ind[i] = (indtemp[pai1] + indtemp[pai2])/ 2.0;  // Pegar os pais antigos, pois posso sortear os novos filhos que foram alterados
+
+        // Mutação: muda a posição do indivíduo de forma controlada dentro do domínio
+        ind[i] = ind[i] + (double) (((rand() %maxx - (maxx/2.0))/100.0) * TaxMut);
+    }
+}
+*/
 
 // Função para ajustar a taxa de mutação ao longo das gerações
 void ajustaTaxaMutacao(int tampop) {
-
-    TaxMut = 0.01;
-
-    /*
+    
     int cont = 0;
         
     for (int i = 0; i < tampop; i++) {
@@ -170,21 +224,21 @@ void ajustaTaxaMutacao(int tampop) {
     }
 
     if (cont2 == 5){
-        TaxMut = 10.0;
+        TaxMut = 3.0;
         cont2 = 0;
     }
     else{
 
     // Se 60% ou mais da população for igual, aumentar a taxa de mutação
     if (cont >= (tampop * (tampop - 1) / 2) * 0.6 && gen!=1){
-        TaxMut = 1.0;
+        TaxMut = 0.1;
         cont2++;
-    }
-        else{
-            TaxMut = 0.01;
+    }else{
+            TaxMut = 0.001;
         }
     }
-    */
+    
+   //TaxMut = 0.0001;
 }
 
 // Função para executar o algoritmo genético e atualizar o gráfico
@@ -200,6 +254,8 @@ void runAlgorithm() {
     glutSetWindow(graphWindow);
     glutPostRedisplay();
 
+    //escolhaer o modo de avaliação
+    //torneio(TamPop);
     elitismo(TamPop);
     gen++;
     
