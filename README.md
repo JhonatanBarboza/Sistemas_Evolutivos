@@ -38,5 +38,6 @@ O Projeto 4 é uma melhoria do Projeto 3, utilizando a mesma função de avalia�
 
 Outra novidade é a possibilidade de restringir o intervalo de nascimento da população, tornando o problema mais desafiador e testando a capacidade do sistema evolutivo de encontrar a solução mesmo sob essas condições. Além disso, a taxa de mutação foi ajustada: em intervalos maiores, foi necessário aumentar ainda mais a dispersão da população. Assim, a cada cinco vezes que a mutação é aumentada como no Projeto 3, é aplicada uma taxa de mutação ainda maior.
 
-https://github.com/JhonatanBarboza/Sistemas_Evolutivos/issues/5#issue-2501717733
+https://github.com/user-attachments/assets/0fa2609f-4327-4407-b9fb-f0e80919ee09
+
 
