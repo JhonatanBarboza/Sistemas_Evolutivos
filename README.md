@@ -2,6 +2,10 @@
 
 Bem-vindo ao meu projeto, onde a ciência dos algoritmos evolutivos se encontra com a arte da visualização gráfica em OpenGL. Aqui, você poderá acompanhar como populações de indivíduos evoluem em busca da maior pontuação de aptidão no sistema.
 
+### Confira uma demonstração do projeto mais recente em ação!
+
+https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
+
 ## Descrição do Projeto
 
 Este projeto apresenta a implementação de algoritmos genéticos em C++ e uma interface gráfica desenvolvida em OpenGL para visualizar a evolução da população ao longo das gerações. Diferentes funções de aptidão são utilizadas para desafiar o algoritmo a encontrar as melhores soluções possíveis.
@@ -54,6 +58,12 @@ https://github.com/user-attachments/assets/0fa2609f-4327-4407-b9fb-f0e80919ee09
 
 DESAFIO: Enfrentar condições realistas com uma função mais complexa e ruído ambiental.
 
-No Projeto 5, a complexidade foi levada a um novo patamar com a introdução de ruído na função de avaliação. A função principal agora é sin(x + Ruido) * x + cos(x * 9.3) * 9.3, que é mais complexa do que a anterior, adicionando uma pequena quantidade de ruído. Além disso, uma versão com ainda mais ruído, sin(x + Ruido) * x + cos(x * Ruido) * Ruido, foi utilizada, simulando um ambiente que se assemelha a condições reais, onde as variáveis externas afetam diretamente o sistema.
+No Projeto 5, a complexidade foi levada a um novo patamar com a introdução de ruído na função de avaliação. A função principal agora é sin(x + Ruido) * x + cos(x * 9.3) * 9.3 (video 1), que é mais complexa do que a anterior, adicionando uma pequena quantidade de ruído. Além disso, uma versão com ainda mais ruído, sin(x + Ruido) * x + cos(x * Ruido) * Ruido (video 2), foi utilizada, simulando um ambiente que se assemelha a condições reais, onde as variáveis externas afetam diretamente o sistema.
 
 Para que o sistema evolutivo funcione de maneira eficiente nessas condições, ajustes foram feitos na taxa de mutação. A mutação foi fixada em 5%, com aumentos pontuais para 20% ocorrendo quatro vezes durante a vida da população, incentivando a diversidade e evitando a estagnação. Além disso, o número de indivíduos agora se adapta automaticamente ao tamanho do gráfico, ajustando a complexidade de acordo com o cenário.
+
+https://github.com/user-attachments/assets/ed065a28-3580-4c18-87e4-92b1c2dfe827
+
+
+https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
+
