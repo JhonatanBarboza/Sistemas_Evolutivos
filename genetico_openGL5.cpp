@@ -23,7 +23,6 @@ typedef struct _individuo{
 constexpr int numger = 250;    // Número de gerações
 float TaxMut;                  // Taxa de mutação
 individuo ind[TamPop + 1];     // Indivíduos
-//float indtemp[TamPop + 1];
 int gen = 1;                   // Geração
 int mainWindow, graphWindow;
 float vetmaxi[numger], vetmedia[numger];
@@ -33,8 +32,6 @@ float Ruido;
 float fitnessFunction(float x) {
     return sin(x+Ruido)*x+cos(x*Ruido)*Ruido;
     //return sin(x+Ruido)*x+cos(x*9.3)*9.3;
-    //return sin(x+Ruido) * ((x * x) / 45); 
-    //return (Ruido*cos(0.039*x+Ruido) + 5*sin(0.05*x) + 0.5+Ruido*cos(0.01*x) + 10*sin(0.07*x) + 5*sin(0.1*x) + 5*sin(0.035*x))*10+1000;		
 }
 
 // Função para inicializar a janela principal
@@ -133,11 +130,6 @@ void avalia(int tampop) {
     }
 }
 
-/*// Função de comparação para ordenar em ordem decrescente por y
-bool comparaIndividuos(individuo a, individuo b) {
-    return a.y > b.y;
-}*/
-
 void melhor_media(float maxfit, float media, int tampop){
     // Guarda o fitness do melhor indivíduo em vetmaxi
     vetmaxi[gen-1] = maxfit;
@@ -154,8 +146,6 @@ void melhor_media(float maxfit, float media, int tampop){
 
 // Função de elitismo para gerar nova geração
 void elitismo(int tampop) {
-
-    //std::sort(ind, ind + tampop + 1, comparaIndividuos);
 
     int maxi = 1;
     float media = 0.0f;
@@ -185,83 +175,12 @@ void elitismo(int tampop) {
 
 }
 
-
-/*
-void torneio(int tampop){  // Torneio de 2
-
-    std::sort(ind, ind + tampop + 1, comparaIndividuos);
-
-    int a, b;
-    float media = 0.0f;
-    float maxfit = ind[1].y;
-    
-    for (int i=1 ; i<=tampop ; i++)
-        indtemp[i] = ind[i].x;  // Backup dos individuos
-
-
-    // Guarda o fitness do melhor indivíduo em vetmaxi
-    vetmaxi[gen-1] = maxfit;
-
-    // Calcula e guarda a média da população em vetmedia
-    for (int i = 1; i <= tampop; i++) {
-        media += ind[i].y;
-    }
-    media = media / tampop;
-    vetmedia[gen-1] = media;
-    printf("\tIndivíduo 1 (x %f) = y %f\n", ind[1].x, ind[1].y);
-    
-    // Torneio
-    for (int i=2 ; i <= tampop ; i++){
-
-        printf("\tIndivíduo %d (x %f) = y %f\n", i, ind[i].x, ind[i].y);
-
-        // Sorteia dois individuos para 1ro torneio
-        a = (rand() %tampop/2) + 1;
-        b = (rand() %tampop/2) + 1;
-
-        // Crossover
-        ind[i].x = (indtemp[a] + indtemp[b])/ 2.0;  // Pegar os pais antigos, pois posso sortear os novos filhos que foram alterados
-
-        // Mutacao                    | nr = 0-40 |    - 20    |  0,02  |  10%
-        ind[i].x = ind[i].x + (float) (((rand() %maxx - (maxx/2.0))/100.0) * TaxMut);
-    }
-}*/
-
-
 // Função para ajustar a taxa de mutação ao longo das gerações
 void ajustaTaxaMutacao(int tampop) {
 
-    //TaxMut = 5.0;
+    if (gen%(numger/4) == 0) TaxMut = 20.0;
+    else TaxMut = 5.0;
 
-    ///*
-    int cont = 0;
-        
-    for (int i = 0; i < tampop; i++) {
-        for (int j = 0; j < tampop; j++) {
-            // Arredondar para duas casas decimais
-            float fit_i_rounded = std::round(ind[i].y * 100.0) / 100.0;
-            float fit_j_rounded = std::round(ind[j].y * 100.0) / 100.0;
-
-            if (fit_i_rounded == fit_j_rounded)
-                cont++;
-        }
-    }
-
-    if (gen%(numger/4) == 0){
-        TaxMut = 20.0;
-    }
-    else{
-
-    // Se 60% ou mais da população for igual, aumentar a taxa de mutação
-    if (cont >= (tampop * (tampop - 1) / 2) * 0.6 && gen!=1){
-        TaxMut = 5.0;
-
-    }
-        else{
-            TaxMut = 5.0;
-        }
-    }
-    //*/
 }
 
 // Função para executar o algoritmo genético e atualizar o gráfico

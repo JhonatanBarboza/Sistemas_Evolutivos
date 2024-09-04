@@ -50,3 +50,10 @@ Outra novidade é a possibilidade de restringir o intervalo de nascimento da pop
 https://github.com/user-attachments/assets/0fa2609f-4327-4407-b9fb-f0e80919ee09
 
 
+## PROJ5
+
+DESAFIO: Enfrentar condições realistas com uma função mais complexa e ruído ambiental.
+
+No Projeto 5, a complexidade foi levada a um novo patamar com a introdução de ruído na função de avaliação. A função principal agora é sin(x + Ruido) * x + cos(x * 9.3) * 9.3, que é mais complexa do que a anterior, adicionando uma pequena quantidade de ruído. Além disso, uma versão com ainda mais ruído, sin(x + Ruido) * x + cos(x * Ruido) * Ruido, foi utilizada, simulando um ambiente que se assemelha a condições reais, onde as variáveis externas afetam diretamente o sistema.
+
+Para que o sistema evolutivo funcione de maneira eficiente nessas condições, ajustes foram feitos na taxa de mutação. A mutação foi fixada em 5%, com aumentos pontuais para 20% ocorrendo quatro vezes durante a vida da população, incentivando a diversidade e evitando a estagnação. Além disso, o número de indivíduos agora se adapta automaticamente ao tamanho do gráfico, ajustando a complexidade de acordo com o cenário.
