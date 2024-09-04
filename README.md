@@ -6,6 +6,12 @@ Bem-vindo ao meu projeto, onde a ciência dos algoritmos evolutivos se encontra 
 
 Este projeto apresenta a implementação de algoritmos genéticos em C++ e uma interface gráfica desenvolvida em OpenGL para visualizar a evolução da população ao longo das gerações. Diferentes funções de aptidão são utilizadas para desafiar o algoritmo a encontrar as melhores soluções possíveis.
 
+### Visão Geral do Desafio 
+
+Progredir na complexidade e aprimorar continuamente o sistema até que ele seja capaz de resolver problemas reais.
+
+O objetivo destes projetos é, de forma incremental, aumentar a dificuldade das condições enfrentadas pelo sistema evolutivo. Cada etapa representa um desafio maior, onde novos obstáculos são introduzidos para testar e fortalecer a capacidade do sistema. A meta final é desenvolver um sistema robusto e eficiente, capaz de resolver problemas complexos e aplicáveis em cenários reais.
+
 ### Recursos
 
 - **Visualização Gráfica:** Utiliza OpenGL para desenhar a função de aptidão e os pontos da população.
