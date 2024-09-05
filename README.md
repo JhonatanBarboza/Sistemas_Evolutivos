@@ -1,4 +1,4 @@
-# Sistemas Evolutivos com Visualização em OpenGL
+# Sistemas Evolutivos
 
 Bem-vindo ao meu projeto, onde a ciência dos algoritmos evolutivos se encontra com a arte da visualização gráfica em OpenGL. Aqui, você poderá acompanhar como populações de indivíduos evoluem em busca da maior pontuação de aptidão no sistema.
 
