@@ -4,7 +4,8 @@ Bem-vindo ao meu projeto, onde a ciência dos algoritmos evolutivos se encontra 
 
 ### Confira uma demonstração do projeto mais recente em ação!
 
-https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
+https://github.com/user-attachments/assets/6aab626b-63ab-43b9-b25e-899d64fd3ea0
+
 
 ## Descrição do Projeto
 
@@ -65,4 +66,12 @@ https://github.com/user-attachments/assets/ed065a28-3580-4c18-87e4-92b1c2dfe827
 Além disso, uma versão ainda mais caótica foi introduzida: sin(x + Ruido) * x + cos(x * Ruido) * Ruido, simulando um ambiente onde as variáveis externas influenciam de forma intensa e contínua. Para lidar com essa complexidade, ajustes foram feitos na taxa de mutação. Ela permanece fixa em 5%, mas quatro vezes durante a evolução da população, a taxa aumenta temporariamente para 20%, promovendo maior diversidade e evitando que o sistema se estabilize em soluções subótimas. O número de indivíduos agora se adapta automaticamente ao tamanho do gráfico, ajustando a pressão evolutiva conforme o cenário se modifica.
 
 https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
+
+
+## PROJ6
+
+DESAFIO: Dominar a adaptação em um ambiente tridimensional 
+
+
+https://github.com/user-attachments/assets/6aab626b-63ab-43b9-b25e-899d64fd3ea0
 
