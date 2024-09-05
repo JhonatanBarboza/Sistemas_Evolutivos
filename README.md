@@ -56,14 +56,13 @@ https://github.com/user-attachments/assets/0fa2609f-4327-4407-b9fb-f0e80919ee09
 
 ## PROJ5
 
-DESAFIO: Enfrentar condições realistas com uma função mais complexa e ruído ambiental.
+DESAFIO: Adaptar-se a um ambiente dinâmico e imprevisível com funções complexas e ruído em evolução.
 
-No Projeto 5, a complexidade foi levada a um novo patamar com a introdução de ruído na função de avaliação. A função principal agora é sin(x + Ruido) * x + cos(x * 9.3) * 9.3 (video 1), que é mais complexa do que a anterior, adicionando uma pequena quantidade de ruído. Além disso, uma versão com ainda mais ruído, sin(x + Ruido) * x + cos(x * Ruido) * Ruido (video 2), foi utilizada, simulando um ambiente que se assemelha a condições reais, onde as variáveis externas afetam diretamente o sistema.
-
-Para que o sistema evolutivo funcione de maneira eficiente nessas condições, ajustes foram feitos na taxa de mutação. A mutação foi fixada em 5%, com aumentos pontuais para 20% ocorrendo quatro vezes durante a vida da população, incentivando a diversidade e evitando a estagnação. Além disso, o número de indivíduos agora se adapta automaticamente ao tamanho do gráfico, ajustando a complexidade de acordo com o cenário.
+O Projeto 5 eleva a dificuldade ao introduzir um ruído dinâmico que modifica a função de avaliação ao longo do tempo, simulando a natureza real, onde as condições ambientais mudam constantemente e impactam os indivíduos. A nova função de avaliação sin(x + Ruido) * x + cos(x * 9.3) * 9.3 é significativamente mais complexa que as anteriores, com o ruído gerando pequenas flutuações laterais na função, alterando os máximos e desafiando o sistema a encontrar o ponto ideal em meio a essa variabilidade.
 
 https://github.com/user-attachments/assets/ed065a28-3580-4c18-87e4-92b1c2dfe827
 
+Além disso, uma versão ainda mais caótica foi introduzida: sin(x + Ruido) * x + cos(x * Ruido) * Ruido, simulando um ambiente onde as variáveis externas influenciam de forma intensa e contínua. Para lidar com essa complexidade, ajustes foram feitos na taxa de mutação. Ela permanece fixa em 5%, mas quatro vezes durante a evolução da população, a taxa aumenta temporariamente para 20%, promovendo maior diversidade e evitando que o sistema se estabilize em soluções subótimas. O número de indivíduos agora se adapta automaticamente ao tamanho do gráfico, ajustando a pressão evolutiva conforme o cenário se modifica.
 
 https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
 
