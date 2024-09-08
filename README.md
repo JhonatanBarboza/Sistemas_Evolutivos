@@ -70,8 +70,15 @@ https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
 
 ## PROJ6
 
-DESAFIO: Dominar a adaptação em um ambiente tridimensional 
+## PROJ6
 
+**DESAFIO: Dominar a adaptação em um ambiente tridimensional**
+
+O Projeto 6 eleva o desafio para o espaço tridimensional, onde o objetivo é encontrar o máximo global a partir da interação entre dois parâmetros (x e y) que influenciam um terceiro (z). A função de avaliação adotada é `z = 50 - sqrt(x^2 + y^2)`, onde o valor de z é maximizado quando x e y se aproximam de zero. Isso cria um ambiente em formato de cone, onde o pico (máximo global) está no centro.
+
+A principal dificuldade reside na adaptação do sistema evolutivo para lidar com a complexidade tridimensional, onde múltiplas variáveis interagem de maneira mais dinâmica e as estratégias anteriores precisam ser ajustadas para encontrar a solução ótima. O algoritmo genético agora deve operar simultaneamente em três eixos, maximizando o valor de z a partir da combinação ideal de x e y.
+
+Assim como nos projetos anteriores, a taxa de mutação é ajustada ao longo das gerações, começando em 5% e aumentando temporariamente em momentos críticos para garantir maior diversidade e evitar que a população converja prematuramente em soluções subótimas. A pressão evolutiva é cuidadosamente controlada para explorar o espaço tridimensional de maneira eficaz, permitindo que o sistema evolutivo encontre o máximo global no ambiente mais complexo até agora.
 
 https://github.com/user-attachments/assets/6aab626b-63ab-43b9-b25e-899d64fd3ea0
 
