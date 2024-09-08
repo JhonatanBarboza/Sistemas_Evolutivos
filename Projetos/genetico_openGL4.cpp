@@ -21,73 +21,53 @@ int mainWindow, graphWindow;
 float vetmaxi[numger], vetmedia[numger];
 int cont2 = 0;
 
+//funções sistema evolutivo 
+float fitnessFunction(float x);
+void iniciapop(int tampop, int ind[]);
+void avalia(int tampop);
+void elitismo(int tampop);
+void ajustaTaxaMutacao(int tampop);
+//funções openGL
+void initGraphWindow();
+void initMainWindow();
+void displayMainWindow();
+void displayGraphWindow();
+void runAlgorithm();
+void keyboard(unsigned char key, int x, int y);
+
+//função principal
+int main(int argc, char** argv) {
+    iniciapop(TamPop, ind);
+
+    // Inicializa o GLUT e o OpenGL
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+
+    // Criação da janela principal
+    glutInitWindowSize(1850, 500);
+    glutInitWindowPosition(50, 50);
+    mainWindow = glutCreateWindow("Grafico da Populacao e Funcao de Aptidao");
+    initMainWindow();
+    glutDisplayFunc(displayMainWindow);
+    glutKeyboardFunc(keyboard);
+
+    // Criação da janela do gráfico de vetmaxi e vetmedia
+    glutInitWindowSize(800, 300);
+    glutInitWindowPosition(1000, 600);
+    graphWindow = glutCreateWindow("Grafico do Fitness Maximo e Media por Geracao");
+    initGraphWindow();
+    glutDisplayFunc(displayGraphWindow);
+
+    glutMainLoop();
+
+    return 0;
+}
+
+//******************************* sistema evolutovo *******************************
+
 // Função de aptidão com vários máximos e mínimos locais e um máximo global
 float fitnessFunction(float x) {
     return sin(x) * ((x * x) / 45);
-}
-
-// Função para inicializar a janela principal
-void initMainWindow() {
-    glClearColor(1.0, 1.0, 1.0, 1.0);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluOrtho2D(minx, maxx, miny, maxy);
-}
-
-// Função para inicializar a janela do gráfico
-void initGraphWindow() {
-    glClearColor(1.0, 1.0, 1.0, 1.0);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluOrtho2D(0, numger, miny, maxy);
-}
-
-// Função para exibir a janela principal
-void displayMainWindow() {
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    // Desenha a curva da função de aptidão
-    glColor3f(0.0, 0.0, 0.0);
-    glBegin(GL_LINE_STRIP);
-    for (float x = minx; x <= maxx; x += 0.1) {
-        float y = fitnessFunction(x);
-        glVertex2f(x, y);
-    }
-    glEnd();
-
-    // Plota os pontos da população atual sobre a curva
-    glPointSize(5.0);
-    glBegin(GL_POINTS);
-    for (int i = 1; i <= TamPop; i++) {
-        float y = fitnessFunction(ind[i]);
-        glVertex2f(ind[i], y);
-    }
-    glEnd();
-
-    glFlush();
-}
-
-// Função para exibir o gráfico de vetmaxi e vetmedia
-void displayGraphWindow() {
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    // Desenha o gráfico do fitness máximo (vetmaxi)
-    glColor3f(1.0, 0.0, 0.0); // Cor vermelha
-    glBegin(GL_LINE_STRIP);
-    for (int i = 0; i < gen - 1; i++) {
-        glVertex2f(i, vetmaxi[i]);
-    }
-    glEnd();
-
-    // Desenha o gráfico da média da população (vetmedia)
-    glColor3f(0.0, 0.0, 1.0); // Cor azul
-    glBegin(GL_LINE_STRIP);
-    for (int i = 0; i < gen - 1; i++) {
-        glVertex2f(i, vetmedia[i]);
-    }
-    glEnd();
-
-    glFlush();
 }
 
 // Função para iniciar a população
@@ -188,6 +168,72 @@ void ajustaTaxaMutacao(int tampop) {
     
 }
 
+//******************************* openGL *******************************
+
+// Função para inicializar a janela principal
+void initMainWindow() {
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(minx, maxx, miny, maxy);
+}
+
+// Função para inicializar a janela do gráfico
+void initGraphWindow() {
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(0, numger, miny, maxy);
+}
+
+// Função para exibir a janela principal
+void displayMainWindow() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Desenha a curva da função de aptidão
+    glColor3f(0.0, 0.0, 0.0);
+    glBegin(GL_LINE_STRIP);
+    for (float x = minx; x <= maxx; x += 0.1) {
+        float y = fitnessFunction(x);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+    // Plota os pontos da população atual sobre a curva
+    glPointSize(5.0);
+    glBegin(GL_POINTS);
+    for (int i = 1; i <= TamPop; i++) {
+        float y = fitnessFunction(ind[i]);
+        glVertex2f(ind[i], y);
+    }
+    glEnd();
+
+    glFlush();
+}
+
+// Função para exibir o gráfico de vetmaxi e vetmedia
+void displayGraphWindow() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Desenha o gráfico do fitness máximo (vetmaxi)
+    glColor3f(1.0, 0.0, 0.0); // Cor vermelha
+    glBegin(GL_LINE_STRIP);
+    for (int i = 0; i < gen - 1; i++) {
+        glVertex2f(i, vetmaxi[i]);
+    }
+    glEnd();
+
+    // Desenha o gráfico da média da população (vetmedia)
+    glColor3f(0.0, 0.0, 1.0); // Cor azul
+    glBegin(GL_LINE_STRIP);
+    for (int i = 0; i < gen - 1; i++) {
+        glVertex2f(i, vetmedia[i]);
+    }
+    glEnd();
+
+    glFlush();
+}
+
 // Função para executar o algoritmo genético e atualizar o gráfico
 void runAlgorithm() {
     ajustaTaxaMutacao(TamPop);
@@ -216,31 +262,4 @@ void keyboard(unsigned char key, int x, int y) {
             printf("Número máximo de gerações atingido.\n");
         }
     }
-}
-
-int main(int argc, char** argv) {
-    iniciapop(TamPop, ind);
-
-    // Inicializa o GLUT e o OpenGL
-    glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-
-    // Criação da janela principal
-    glutInitWindowSize(1850, 500);
-    glutInitWindowPosition(50, 50);
-    mainWindow = glutCreateWindow("Grafico da Populacao e Funcao de Aptidao");
-    initMainWindow();
-    glutDisplayFunc(displayMainWindow);
-    glutKeyboardFunc(keyboard);
-
-    // Criação da janela do gráfico de vetmaxi e vetmedia
-    glutInitWindowSize(800, 300);
-    glutInitWindowPosition(1000, 600);
-    graphWindow = glutCreateWindow("Grafico do Fitness Maximo e Media por Geracao");
-    initGraphWindow();
-    glutDisplayFunc(displayGraphWindow);
-
-    glutMainLoop();
-
-    return 0;
 }

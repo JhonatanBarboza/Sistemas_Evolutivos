@@ -17,42 +17,39 @@ float fit[TamPop + 1];  // Aptidão dos indivíduos
 int gen = 1;            // Geração
 int numger = 50;        // Número de gerações
 
+float fitnessFunction(float x);
+void iniciapop(int tampop, int ind[]);
+void avalia(int tampop);
+void elitismo(int tampop);
+void ajustaTaxaMutacao(int tampop);
+void display();
+void initOpenGL();
+void runAlgorithm();
+void keyboard(unsigned char key, int x, int y);
+
+int main(int argc, char** argv) {
+    iniciapop(TamPop, ind);  // Inicializa a população
+
+    // Inicializa o GLUT e o OpenGL
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(1850, 500);
+    glutInitWindowPosition(90, 90);
+    glutCreateWindow("Grafico da População e Função de Aptidão");
+    initOpenGL();
+    glutDisplayFunc(display);   // Define a função de exibição
+    glutKeyboardFunc(keyboard); // Define a função para lidar com teclado
+
+    glutMainLoop();  // Entra no loop principal do GLUT
+
+    return 0;
+}
+
+//************************************** sistema evolutivo **************************************
+
 // Função de aptidão com vários máximos e mínimos locais e um máximo global
 float fitnessFunction(float x) {
     return sin(x)*((x*x)/(45));
-}
-
-// Função para desenhar o gráfico
-void display() {
-    glClear(GL_COLOR_BUFFER_BIT);  // Limpa a tela
-
-    // Desenha a curva da função de aptidão
-    glColor3f(0.0, 0.0, 0.0); // Cor preta para a linha da função
-    glBegin(GL_LINE_STRIP);
-    for (float x = minx; x <= maxx; x += 0.1) {
-        float y = fitnessFunction(x);
-        glVertex2f(x, y);
-    }
-    glEnd();
-
-    // Plota os pontos da população atual sobre a curva
-    glPointSize(5.0);
-    glBegin(GL_POINTS);
-    for (int i = 1; i <= TamPop; i++) {
-        float y = fitnessFunction(ind[i]);  // Calcula y para garantir que o ponto esteja na curva
-        glVertex2f(ind[i], y);
-    }
-    glEnd();
-
-    glFlush();  // Atualiza o buffer para exibir o desenho
-}
-
-// Função de inicialização do OpenGL
-void initOpenGL() {
-    glClearColor(1.0, 1.0, 1.0, 1.0);  // Define a cor de fundo (branco)
-    glMatrixMode(GL_PROJECTION);       // Muda para a matriz de projeção
-    glLoadIdentity();                  // Reseta a matriz de projeção
-    gluOrtho2D(minx, maxx, miny, maxy);  // Define o sistema de coordenadas
 }
 
 // Função para iniciar a população
@@ -123,6 +120,41 @@ void ajustaTaxaMutacao(int tampop) {
    //TaxMut = 0.3;
 }
 
+//************************************** openGL **************************************
+
+// Função para desenhar o gráfico
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);  // Limpa a tela
+
+    // Desenha a curva da função de aptidão
+    glColor3f(0.0, 0.0, 0.0); // Cor preta para a linha da função
+    glBegin(GL_LINE_STRIP);
+    for (float x = minx; x <= maxx; x += 0.1) {
+        float y = fitnessFunction(x);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+    // Plota os pontos da população atual sobre a curva
+    glPointSize(5.0);
+    glBegin(GL_POINTS);
+    for (int i = 1; i <= TamPop; i++) {
+        float y = fitnessFunction(ind[i]);  // Calcula y para garantir que o ponto esteja na curva
+        glVertex2f(ind[i], y);
+    }
+    glEnd();
+
+    glFlush();  // Atualiza o buffer para exibir o desenho
+}
+
+// Função de inicialização do OpenGL
+void initOpenGL() {
+    glClearColor(1.0, 1.0, 1.0, 1.0);  // Define a cor de fundo (branco)
+    glMatrixMode(GL_PROJECTION);       // Muda para a matriz de projeção
+    glLoadIdentity();                  // Reseta a matriz de projeção
+    gluOrtho2D(minx, maxx, miny, maxy);  // Define o sistema de coordenadas
+}
+
 // Função para executar o algoritmo genético e atualizar o gráfico
 void runAlgorithm() {
     ajustaTaxaMutacao(TamPop);  // Ajusta a taxa de mutação
@@ -142,22 +174,4 @@ void keyboard(unsigned char key, int x, int y) {
             printf("Número máximo de gerações atingido.\n");
         }
     }
-}
-
-int main(int argc, char** argv) {
-    iniciapop(TamPop, ind);  // Inicializa a população
-
-    // Inicializa o GLUT e o OpenGL
-    glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize(1850, 500);
-    glutInitWindowPosition(90, 90);
-    glutCreateWindow("Grafico da População e Função de Aptidão");
-    initOpenGL();
-    glutDisplayFunc(display);   // Define a função de exibição
-    glutKeyboardFunc(keyboard); // Define a função para lidar com teclado
-
-    glutMainLoop();  // Entra no loop principal do GLUT
-
-    return 0;
 }

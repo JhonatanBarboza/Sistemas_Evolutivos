@@ -6,7 +6,9 @@
 
 // Estrutura do indivíduo
 typedef struct _individuo {
-    float x, y, z;
+    float x;
+    float y;
+    float z;
 } individuo;
 
 #define TamPop 200    // Tamanho da pop22222ulação
@@ -20,11 +22,12 @@ float c = 50.0f;
 float vetmaxi[numger], vetmedia[numger];
 int graphWindow, mainWindow;
 
+//***************************************** sistema evolutivo *****************************************
+
 // Função de aptidão com vários máximos e mínimos locais e um máximo global
 float fitnessFunction(float x, float y) {
     return fmax(0, c - sqrt(x * x + y * y));  // Garante que o valor mínimo seja 0
 }
-
 
 // Função para iniciar a população
 void iniciapop(int tampop, individuo ind[]) {
@@ -101,8 +104,7 @@ void elitismo(int tampop) {
     
 }
 
-
-//***************************************************************************************************//
+//***************************************** openGL *****************************************
 
 // Função para desenhar uma grade sobre a superfície do cone
 void drawGridOnCone() {

@@ -70,9 +70,7 @@ https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
 
 ## PROJ6
 
-## PROJ6
-
-**DESAFIO: Dominar a adaptação em um ambiente tridimensional**
+DESAFIO: Dominar a adaptação em um ambiente tridimensional
 
 O Projeto 6 eleva o desafio para o espaço tridimensional, onde o objetivo é encontrar o máximo global a partir da interação entre dois parâmetros (x e y) que influenciam um terceiro (z). A função de avaliação adotada é `z = 50 - sqrt(x^2 + y^2)`, onde o valor de z é maximizado quando x e y se aproximam de zero. Isso cria um ambiente em formato de cone, onde o pico (máximo global) está no centro.
 
