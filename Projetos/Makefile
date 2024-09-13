@@ -1,5 +1,5 @@
 # Nome do executável
-TARGET = genetico_openGL
+TARGET = Projeto
 
 # Compilador e flags
 CC = g++
@@ -9,7 +9,7 @@ CFLAGS = -Wall -g
 LIBS = -lGL -lGLU -lglut
 
 # Arquivos fonte
-SRCS = genetico_openGL.cpp
+SRCS = Projeto.cpp
 
 # Arquivos objeto
 OBJS = $(SRCS:.cpp=.o)
