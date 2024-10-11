@@ -4,7 +4,7 @@ Bem-vindo ao meu projeto, onde a ciência dos algoritmos evolutivos se encontra 
 
 ### Confira uma demonstração do projeto mais recente em ação!
 
-https://github.com/user-attachments/assets/6aab626b-63ab-43b9-b25e-899d64fd3ea0
+![proj6](https://github.com/user-attachments/assets/8f1a8731-e2dc-461a-a584-d89de57abb08)
 
 
 ## Descrição do Projeto
@@ -65,7 +65,7 @@ O Projeto 5 eleva a dificuldade ao introduzir um ruído dinâmico que modifica a
 
 Além disso, uma versão ainda mais caótica foi introduzida: sin(x + Ruido) * x + cos(x * Ruido) * Ruido, simulando um ambiente onde as variáveis externas influenciam de forma intensa e contínua. Para lidar com essa complexidade, ajustes foram feitos na taxa de mutação. Ela permanece fixa em 5%, mas quatro vezes durante a evolução da população, a taxa aumenta temporariamente para 20%, promovendo maior diversidade e evitando que o sistema se estabilize em soluções subótimas. O número de indivíduos agora se adapta automaticamente ao tamanho do gráfico, ajustando a pressão evolutiva conforme o cenário se modifica.
 
-https://github.com/user-attachments/assets/c9fd53fd-8444-4ffe-9404-11faf0cd83fe
+![proj5 2](https://github.com/user-attachments/assets/c2bef6ac-3609-45a0-bb77-22ee09ee5e95)
 
 
 ## PROJ6
@@ -78,5 +78,5 @@ A principal dificuldade reside na adaptação do sistema evolutivo para lidar co
 
 Assim como nos projetos anteriores, a taxa de mutação é ajustada ao longo das gerações, começando em 5% e aumentando temporariamente em momentos críticos para garantir maior diversidade e evitar que a população converja prematuramente em soluções subótimas. A pressão evolutiva é cuidadosamente controlada para explorar o espaço tridimensional de maneira eficaz, permitindo que o sistema evolutivo encontre o máximo global no ambiente mais complexo até agora.
 
-https://github.com/user-attachments/assets/6aab626b-63ab-43b9-b25e-899d64fd3ea0
+![proj6](https://github.com/user-attachments/assets/8f1a8731-e2dc-461a-a584-d89de57abb08)
 
