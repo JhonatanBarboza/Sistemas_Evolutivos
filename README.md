@@ -34,7 +34,7 @@ DESAFIO: Visualizar a evolução em tempo real.
 
 O Projeto 2 é uma evolução do Projeto 1, com a adição de um gráfico da função utilizando OpenGL para visualização. O desafio aqui é transformar a evolução da população em uma representação visual clara e dinâmica. Agora, é possível ver os indivíduos sendo gerados aleatoriamente e, ao longo das gerações, convergindo para o máximo da função.
 
-https://github.com/user-attachments/assets/9def0049-d5f3-4396-8da4-c6b660548612
+https://github.com/JhonatanBarboza/Sistemas_Evolutivos/issues/10#issue-2582085589
 
 ## PROJ3
 
