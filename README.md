@@ -42,7 +42,7 @@ DESAFIO: Navegar por um terreno complexo de múltiplos picos e vales.
 
 O Projeto 3 utiliza a função sin(x) * (x^2 / 45) no intervalo de -51 a 48. Esta função apresenta vários máximos e mínimos locais, com um máximo global que é o objetivo da população. O desafio é maior, pois o máximo global e o segundo maior máximo estão em lados opostos do gráfico. Além disso, foi implementada uma taxa de mutação variável. A população é gerada aleatoriamente e, ao longo das gerações, a taxa de mutação é mantida em 0,1 até que 60% da população esteja idêntica até a segunda casa decimal, o que indica que a população encontrou um máximo. Quando isso ocorre, a taxa de mutação aumenta para 10, espalhando novamente a população em busca de um máximo maior.
 
-https://github.com/user-attachments/assets/730aa40c-a7eb-4384-aedc-666e92e6a901
+![proj3](https://github.com/user-attachments/assets/ab1743af-0ae9-4fab-91b7-68615dc4c7a0)
 
 ## PROJ4
 
