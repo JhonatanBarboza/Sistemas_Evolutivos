@@ -52,7 +52,7 @@ O Projeto 4 é uma melhoria do Projeto 3, utilizando a mesma função de avalia�
 
 Outra novidade é a possibilidade de restringir o intervalo de nascimento da população, tornando o problema mais desafiador e testando a capacidade do sistema evolutivo de encontrar a solução mesmo sob essas condições. Além disso, a taxa de mutação foi ajustada: em intervalos maiores, foi necessário aumentar ainda mais a dispersão da população. Assim, a cada cinco vezes que a mutação é aumentada como no Projeto 3, é aplicada uma taxa de mutação ainda maior.
 
-https://github.com/user-attachments/assets/0fa2609f-4327-4407-b9fb-f0e80919ee09
+![proj4](https://github.com/user-attachments/assets/c2c2353d-562d-46a9-96c2-2fcca1290161)
 
 
 ## PROJ5
@@ -61,7 +61,7 @@ DESAFIO: Adaptar-se a um ambiente dinâmico e imprevisível com funções comple
 
 O Projeto 5 eleva a dificuldade ao introduzir um ruído dinâmico que modifica a função de avaliação ao longo do tempo, simulando a natureza real, onde as condições ambientais mudam constantemente e impactam os indivíduos. A nova função de avaliação sin(x + Ruido) * x + cos(x * 9.3) * 9.3 é significativamente mais complexa que as anteriores, com o ruído gerando pequenas flutuações laterais na função, alterando os máximos e desafiando o sistema a encontrar o ponto ideal em meio a essa variabilidade.
 
-https://github.com/user-attachments/assets/ed065a28-3580-4c18-87e4-92b1c2dfe827
+![proj5 1](https://github.com/user-attachments/assets/1273f4e4-f15d-4ff0-9381-a711057155ed)
 
 Além disso, uma versão ainda mais caótica foi introduzida: sin(x + Ruido) * x + cos(x * Ruido) * Ruido, simulando um ambiente onde as variáveis externas influenciam de forma intensa e contínua. Para lidar com essa complexidade, ajustes foram feitos na taxa de mutação. Ela permanece fixa em 5%, mas quatro vezes durante a evolução da população, a taxa aumenta temporariamente para 20%, promovendo maior diversidade e evitando que o sistema se estabilize em soluções subótimas. O número de indivíduos agora se adapta automaticamente ao tamanho do gráfico, ajustando a pressão evolutiva conforme o cenário se modifica.
 
