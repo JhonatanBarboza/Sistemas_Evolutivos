@@ -84,7 +84,7 @@ Assim como nos projetos anteriores, a taxa de mutação é ajustada ao longo das
 
 DESAFIO: Explorar a complexidade em um ambiente de múltiplas dimensões
 
-O Projeto 7 expande o desafio para uma função de dez variáveis, com uma função de avaliação significativamente mais complexa. O objetivo é encontrar a combinação ideal que maximiza o resultado esperado. Essa nova configuração exige uma adaptação mais robusta do sistema evolutivo, onde o número de variáveis interativas exige um maior controle para encontrar o ponto ótimo em um espaço de busca consideravelmente mais vasto.
+O Projeto 7 expande o desafio para uma função de dez variáveis, com uma função de avaliação significativamente mais complexa. O objetivo é encontrar a combinação ideal que maximiza o resultado esperado. Essa nova configuração exige uma adaptação mais robusta do sistema evolutivo, onde o número de variáveis interativas exige um maior controle para encontrar o número exigido em um espaço de busca consideravelmente mais vasto.
 
 A função de avaliação adotada é desenvolvida para desafiar as estratégias anteriores, forçando o algoritmo genético a operar em uma estrutura de dez dimensões. Cada variável adiciona uma camada de complexidade que o algoritmo deve entender e manipular, exigindo ajustes finos na taxa de mutação e estratégias de cruzamento ao longo das gerações.
 
