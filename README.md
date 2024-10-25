@@ -80,3 +80,15 @@ Assim como nos projetos anteriores, a taxa de mutação é ajustada ao longo das
 
 ![proj6](https://github.com/user-attachments/assets/8f1a8731-e2dc-461a-a584-d89de57abb08)
 
+## PROJ7
+
+DESAFIO: Explorar a complexidade em um ambiente de múltiplas dimensões
+
+O Projeto 7 expande o desafio para uma função de dez variáveis, com uma função de avaliação significativamente mais complexa. O objetivo é encontrar a combinação ideal que maximiza o resultado esperado. Essa nova configuração exige uma adaptação mais robusta do sistema evolutivo, onde o número de variáveis interativas exige um maior controle para encontrar o ponto ótimo em um espaço de busca consideravelmente mais vasto.
+
+A função de avaliação adotada é desenvolvida para desafiar as estratégias anteriores, forçando o algoritmo genético a operar em uma estrutura de dez dimensões. Cada variável adiciona uma camada de complexidade que o algoritmo deve entender e manipular, exigindo ajustes finos na taxa de mutação e estratégias de cruzamento ao longo das gerações.
+
+Como nas fases anteriores, a taxa de mutação é dinâmica, adaptando-se para aumentar a diversidade e evitar a convergência prematura em soluções subótimas. A pressão evolutiva também é estrategicamente ajustada para garantir que o sistema explore eficientemente o espaço multidimensional, permitindo uma busca eficaz pelo máximo global em um dos ambientes mais desafiadores enfrentados até agora.
+
+![Screencast from 2024-10-25 19-08-22](https://github.com/user-attachments/assets/ea7d7bd2-b9c8-449a-a5ed-40f25c522f48)
+
