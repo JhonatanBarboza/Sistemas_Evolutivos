@@ -82,7 +82,7 @@ Assim como nos projetos anteriores, a taxa de mutação é ajustada ao longo das
 
 ## PROJ7
 
-DESAFIO: Explorar a complexidade em um ambiente de múltiplas dimensões
+DESAFIO: Explorar a complexidade em um ambiente de dez dimenções 
 
 O Projeto 7 expande o desafio para uma função de dez variáveis, com uma função de avaliação significativamente mais complexa. O objetivo é encontrar a combinação ideal que maximiza o resultado esperado. Essa nova configuração exige uma adaptação mais robusta do sistema evolutivo, onde o número de variáveis interativas exige um maior controle para encontrar o número exigido em um espaço de busca consideravelmente mais vasto.
 
@@ -93,7 +93,8 @@ Como nas fases anteriores, a taxa de mutação é dinâmica, adaptando-se para a
 ![Screencast from 2024-10-25 19-08-22](https://github.com/user-attachments/assets/ea7d7bd2-b9c8-449a-a5ed-40f25c522f48)
 
 
-Função de aptidão com vários máximos e mínimos locais e um máximo global
+Função de aptidão em 10 dimenções 
+
 ```cpp
 float fitnessFunction(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j) {
     //return a + b + c + d + e - f - g - h - i - j + Ruido;  
