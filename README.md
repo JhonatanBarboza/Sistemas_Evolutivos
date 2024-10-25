@@ -92,3 +92,34 @@ Como nas fases anteriores, a taxa de mutação é dinâmica, adaptando-se para a
 
 ![Screencast from 2024-10-25 19-08-22](https://github.com/user-attachments/assets/ea7d7bd2-b9c8-449a-a5ed-40f25c522f48)
 
+
+Função de aptidão com vários máximos e mínimos locais e um máximo global
+```cpp
+float fitnessFunction(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j) {
+    //return a + b + c + d + e - f - g - h - i - j + Ruido;  
+    float resultado = 0.0;
+
+    // Soma os primeiros cinco números e multiplica pelo valor absoluto do sexto
+    resultado += ((a + b + c + d + e + Ruido) * fabs(f));
+
+    // Subtrai o quadrado do sétimo e eleva o oitavo ao cubo
+    resultado -= (pow(g, 2) + b * e) - Ruido / (sin (b * 67));
+    resultado += (pow(h, 3) - i) + h * Ruido + sqrt (j + a)-sin (a);
+
+    // Aplica seno ao nono e cosseno ao décimo e soma ambos
+    resultado += (sin(i) + cos(j * a)) - Ruido + pow(e, 2)+ cos (b-i*j);
+
+    // Verifica condições lógicas e faz um ajuste no resultado
+    if (a > b && c < d)        resultado *= (2 + b) / 5 + Ruido;  // Se a > b e c < d, dobra o valor
+    else if (e == f || g != h) resultado /= 3 + cos (d + sin (g * Ruido));  // Se e é igual a f ou g é diferente de h, divide por 3
+    else if (b > a || c < i)   resultado += sin(c + Ruido) * f + cos(i * Ruido) * Ruido;
+
+    // Função dos proj anteriores
+    resultado += sin(c+Ruido)*f+cos(i*Ruido)*Ruido;
+
+    // Realiza um ajuste de raiz quadrada baseado em alguns valores
+    resultado += (sqrt(fabs(a * g - i * j) + Ruido))+5;
+
+    return resultado;
+}
+```
