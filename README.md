@@ -4,7 +4,7 @@ Bem-vindo ao meu projeto, onde a ciência dos algoritmos evolutivos se encontra 
 
 ### Confira uma demonstração do projeto mais recente em ação!
 
-![Screencast from 2024-10-12 12-57-54](https://github.com/user-attachments/assets/9c4286df-8ca9-4cdd-830a-1ecc71d81ffe)
+![proj6](https://github.com/user-attachments/assets/8f1a8731-e2dc-461a-a584-d89de57abb08)
 
 
 ## Descrição do Projeto
